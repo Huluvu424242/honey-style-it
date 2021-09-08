@@ -6,7 +6,7 @@
 [![Donate with paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/huluvu424242)
 ![Keybase BTC](https://img.shields.io/keybase/btc/huluvu424242)
 # honey-style-it 
-This project contains web components to build an news feed reader at an web site.
+This project contains web components to use an design module for unique rendering your webcomponents but shadown dom. 
 (currently under development - unready and unstable)
 
 ## installation
@@ -18,7 +18,7 @@ npm install --save @huluvu424242/honey-style-it
 ```html
 <script 
     type="module" 
-    src='https://unpkg.com/@huluvu424242/honey-style-it@0.0.1/dist/honey-style-it/honey-style-it.js'>
+    src='https://unpkg.com/@huluvu424242/honey-style-it@0.0.1/dist/honey-style-it/honey-style-it.esm.js'>
 </script>
 ```
 To the [demo site](https://huluvu424242.github.io/honey-style-it/index.html)
@@ -38,17 +38,38 @@ To the [demo site](https://huluvu424242.github.io/honey-style-it/index.html)
 ```
 -->
 ```html
+<head>
+  <!-- news app -->
+  <script type="module"
+          src="https://unpkg.com/@huluvu424242/honey-news@0.0.5/dist/honey-news/honey-news.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@huluvu424242/honey-news@0.0.5/dist/cjs/honey-news.cjs.js"></script>
+  <!-- style -->
+  <script type="module"
+          src="https://unpkg.com/@huluvu424242/honey-papercss-style@0.0.1/dist/honey-papercss-style/honey-papercss-style.esm.js"></script>
+  <script nomodule
+          src="https://unpkg.com/@huluvu424242/honey-papercss-style@0.0.1/dist/cjs/honey-papercss-style.cjs.js"></script>
+</head>
+
 <body id="seite" style="display: block">
 
-<h1>Nutzung der honey-style-it Komponente</h1>
-<span class="wichtig">!!!</span> Das ist eine Demo Seite welche alle Feature der App zeigen soll - aus diesem Grund ist auch die Statistik eingeschaltet <span class="wichtig">!!!</span><br>
-Es werden nur Daten zu den abgerufenen Feeds gespeichert (in memory) wie: url, anzahl der abfragen, anzahl valider responses<br>
-Sollten Sie die Speicherung nicht wünschen - dann geben Sie bitte keinen neuen News ein.<br>
-Vielen Dank für Ihr Verständnis. <br>
-<hr>
-<honey-style-it />
+<h1>usage of honey-style-it components with honey-news</h1>
+
+<honey-define-style>
+ <honey-papercss-style/>
+</honey-define-style>
+
+<honey-news/>
 
 </body>
+
+<!-- in your webcomponents (e.g. honey-news) usage -->
+<Host>
+    <honey-apply-style/>
+    :
+</Host>
+
+
+
 ```
 To the [live demo](https://huluvu424242.github.io/honey-style-it/index.html)
 

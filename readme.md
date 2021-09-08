@@ -93,7 +93,7 @@ To the [live demo](https://huluvu424242.github.io/honey-style-it/index.html)
 
 no warranty
 
-## license
+## license 
 
 MIT License
 

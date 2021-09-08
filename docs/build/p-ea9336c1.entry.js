@@ -1,0 +1,1 @@
+import{r as t,h as s,g as e,H as r}from"./p-7c9122d2.js";const n=class{constructor(s){t(this,s)}componentWillLoad(){this.theme=this.host.children.item(0).tagName}async getTheme(){return this.theme?this.theme.toLowerCase():this.theme}render(){return s(r,null)}get host(){return e(this)}};n.style="";export{n as honey_define_style}

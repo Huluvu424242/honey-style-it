@@ -18,7 +18,7 @@ npm install --save @huluvu424242/honey-style-it
 ```html
 <script 
     type="module" 
-    src='https://unpkg.com/@huluvu424242/honey-style-it@0.0.1/dist/honey-style-it/honey-style-it.esm.js'>
+    src='https://unpkg.com/@huluvu424242/honey-style-it@0.0.4/dist/honey-style-it/honey-style-it.esm.js'>
 </script>
 ```
 To the [demo site](https://huluvu424242.github.io/honey-style-it/index.html)

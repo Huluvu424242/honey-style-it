@@ -20,9 +20,9 @@
   },
   "keywords": [
     "honey",
-    "news",
-    "rss",
-    "atom",
+    "styleit",
+    "style-lib",
+    "lib",
     "webcomponent",
     "custom-element"
   ],
@@ -46,10 +46,7 @@
     "node": "14.15.0"
   },
   "dependencies": {
-    "object-hash": "2.1.1",
-    "rxjs": "6.6.3",
-    "feedme": "2.0.2",
-    "@huluvu424242/liona-feeds": "2.3.0"
+    "object-hash": "2.1.1"
   },
   "devDependencies": {
     "@stencil/core": "2.5.2",

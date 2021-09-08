@@ -2,9 +2,7 @@ import {Config} from '@stencil/core';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 export const config: Config = {
-  namespace: 'honey-template',
-  globalStyle: 'src/global/variables.default.css',
-  // globalScript: 'src/global/app.ts',
+  namespace: 'honey-style-it',
   testing: {
     /**
      * Gitlab CI doesn't allow sandbox, therefor this parameters must be passed to your Headless Chrome
@@ -33,7 +31,6 @@ export const config: Config = {
       type: 'www',
       dir: 'docs',
       copy: [
-        { src: "demo.html"},
         { src: "404.html"},
         { src: "redirect.js"}
       ],

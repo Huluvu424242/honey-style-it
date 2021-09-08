@@ -10,9 +10,14 @@ export class HoneyDefineStyle {
 
   protected theme: string;
 
-  componentWillLoad() {
-    const children: HTMLCollection = this.host.children;
-    this.theme = children.item(0).tagName;
+  async componentWillLoad() {
+    try {
+      const children: HTMLCollection = this.host.children;
+      this.theme = children.item(0).tagName;
+    }catch(error){
+      this.theme = undefined;
+      this.printWarn(error);
+    }
   }
 
 
@@ -25,6 +30,12 @@ export class HoneyDefineStyle {
       return this.theme.toLowerCase();
     } else {
       return this.theme;
+    }
+  }
+
+  printWarn( message:string){
+    if(console){
+      console.warn(message);
     }
   }
 

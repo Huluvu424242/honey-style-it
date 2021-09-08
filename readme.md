@@ -85,7 +85,7 @@ To the [live demo](https://huluvu424242.github.io/honey-style-it/index.html)
 
 ### vX.X.X unpublished
 
-### v0.0.1 published at 2021-03-15
+### v0.0.1 published at 2021-09-08
 
 * [issue 1](https://github.com/Huluvu424242/honey-style-it/issues/1) setup project
 

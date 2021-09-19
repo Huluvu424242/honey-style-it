@@ -22,9 +22,25 @@
   <base href="/honey-style-it">
 </head>
 <body id="seite">
+
+<script>
+  function setStyle(name){
+    const elem = document.getElementsByTagName("honey-define-style")[0];
+    const replacement = document.createElement(name);
+    elem.replaceChild(replacement,elem.children[0]);
+    elem.recomputeTheme();
+  }
+</script>
+
 <honey-define-style>
   <honey-papercss-style/>
 </honey-define-style>
+
+<button onclick="setStyle('honey-bulma-style')">Bulma Style</button>
+<button onclick="setStyle('honey-papercss-style')">PaperCSS Style</button>
+<button onclick="setStyle('honey-bootstrap-style')">Bootstrap Style</button>
+
+
 <honey-news site-basepath="/honey-style-it" local-basepath="/"/>
 </body>
 </html>

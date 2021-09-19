@@ -4,7 +4,6 @@ import {printWarning} from "../../shared/helper";
 
 @Component({
   tag: 'honey-define-style',
-  styleUrl: 'honey-define-style.css',
 })
 export class HoneyDefineStyle {
 

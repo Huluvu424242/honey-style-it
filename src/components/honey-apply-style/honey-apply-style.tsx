@@ -5,7 +5,6 @@ import {printDebug, printError, ThemeListener} from "../../shared/helper";
 
 @Component({
   tag: 'honey-apply-style',
-  styleUrl: 'honey-apply-style.css',
 })
 export class HoneyApplyStyle {
 

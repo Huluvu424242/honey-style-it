@@ -5,18 +5,19 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Observer, Subscription } from "rxjs";
 export namespace Components {
     interface HoneyApplyStyle {
-        /**
-          * tagName of honey style sheet to apply e.g. 'honey-papercss-style'
-         */
-        "theme": string;
     }
     interface HoneyDefineStyle {
         /**
+          * Trigger recompute theme style.
+         */
+        "recomputeTheme": () => Promise<void>;
+        /**
           * Get the current theme as string in lowercase of tag name.
          */
-        "getTheme": () => Promise<string>;
+        "subscribeThemeChangeListener": (observer: Observer<string>) => Promise<Subscription>;
     }
 }
 declare global {
@@ -39,10 +40,6 @@ declare global {
 }
 declare namespace LocalJSX {
     interface HoneyApplyStyle {
-        /**
-          * tagName of honey style sheet to apply e.g. 'honey-papercss-style'
-         */
-        "theme"?: string;
     }
     interface HoneyDefineStyle {
     }

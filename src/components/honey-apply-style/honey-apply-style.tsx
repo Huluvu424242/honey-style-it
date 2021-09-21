@@ -16,7 +16,7 @@ export class HoneyApplyStyle {
    */
   @State() theme: string;
 
-  async componentWillLoad() {
+  async connectedCallback() {
     try {
       await customElements.whenDefined('honey-define-style');
       const styleElements: HoneyDefineStyle = document.querySelector('honey-define-style') as unknown as HoneyDefineStyle;

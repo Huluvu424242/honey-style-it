@@ -1,6 +1,6 @@
 {
   "name": "@huluvu424242/honey-style-it",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "News reader web component for custom urls.",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -46,7 +46,8 @@
     "node": "14.15.0"
   },
   "dependencies": {
-    "object-hash": "2.1.1"
+    "object-hash": "2.1.1",
+    "rxjs": "7.3.0"
   },
   "devDependencies": {
     "@stencil/core": "2.5.2",

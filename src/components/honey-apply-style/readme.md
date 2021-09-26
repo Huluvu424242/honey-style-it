@@ -5,12 +5,18 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
+## Dependencies
 
-| Property | Attribute | Description                                                       | Type     | Default     |
-| -------- | --------- | ----------------------------------------------------------------- | -------- | ----------- |
-| `theme`  | `theme`   | tagName of honey style sheet to apply e.g. 'honey-papercss-style' | `string` | `undefined` |
+### Used by
 
+ - [honey-select-style](../honey-select-style)
+
+### Graph
+```mermaid
+graph TD;
+  honey-select-style --> honey-apply-style
+  style honey-apply-style fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

@@ -1,1 +1,0 @@
-import{r as t,h as e}from"./p-7c9122d2.js";const s=class{constructor(e){t(this,e)}async componentWillLoad(){try{await customElements.whenDefined("honey-define-style");const t=document.querySelector("honey-define-style");this.theme=await t.getTheme()}catch(t){this.theme="honey-default-style"}}render(){return e(this.theme,null)}};s.style="";export{s as honey_apply_style}

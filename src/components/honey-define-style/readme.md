@@ -7,13 +7,23 @@
 
 ## Methods
 
-### `getTheme() => Promise<string>`
+### `recomputeTheme() => Promise<void>`
+
+Trigger recompute theme style.
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `subscribeThemeChangeListener(observer: Observer<string>) => Promise<Subscription>`
 
 Get the current theme as string in lowercase of tag name.
 
 #### Returns
 
-Type: `Promise<string>`
+Type: `Promise<Subscription>`
 
 
 

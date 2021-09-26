@@ -18,7 +18,7 @@ npm install --save @huluvu424242/honey-style-it
 ```html
 <script 
     type="module" 
-    src='https://unpkg.com/@huluvu424242/honey-style-it@0.0.4/dist/honey-style-it/honey-style-it.esm.js'>
+    src='https://unpkg.com/@huluvu424242/honey-style-it@0.0.5/dist/honey-style-it/honey-style-it.esm.js'>
 </script>
 ```
 To the [demo site](https://huluvu424242.github.io/honey-style-it/index.html)
@@ -84,6 +84,11 @@ To the [live demo](https://huluvu424242.github.io/honey-style-it/index.html)
 ## releaselog
 
 ### vX.X.X unpublished
+
+### v0.0.5 published at 2021-09-21
+
+* [feature 2](https://github.com/Huluvu424242/honey-style-it/projects/2#card-68396844) handle style changes
+
 
 ### v0.0.4 published at 2021-09-08
 

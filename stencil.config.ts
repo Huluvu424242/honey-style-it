@@ -16,16 +16,17 @@ export const config: Config = {
       esmLoaderPath: '../loader',
     },
     {
-      type: 'dist-custom-elements-bundle',
+      type: 'dist-custom-elements',
     },
     {
       type: 'docs-readme',
+      dir: 'docs/api',
       strict: true,
       footer: '*Built with [StencilJS](https://stenciljs.com/)* by Huluvu424242'
     },
     {
       type: 'docs-json',
-      file: 'src/components/custom-elements.json'
+      file: 'docs/api/components/custom-elements.json'
     },
     {
       type: 'www',

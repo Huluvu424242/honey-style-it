@@ -1,0 +1,212 @@
+{
+  "timestamp": "2022-03-06T18:04:27",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.14.0",
+    "typescriptVersion": "4.5.4"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/honey-apply-style/honey-apply-style.tsx",
+      "encapsulation": "none",
+      "tag": "honey-apply-style",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "honey-select-style"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "honey-select-style": [
+          "honey-apply-style"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/honey-define-style/honey-define-style.tsx",
+      "encapsulation": "none",
+      "tag": "honey-define-style",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [
+        {
+          "name": "getStyleName$",
+          "returns": {
+            "type": "Promise<Observable<string>>",
+            "docs": ""
+          },
+          "signature": "getStyleName$() => Promise<Observable<string>>",
+          "parameters": [],
+          "docs": "Referenz auf das Replay Subject als Observable",
+          "docsTags": []
+        },
+        {
+          "name": "recomputeTheme",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "recomputeTheme() => Promise<void>",
+          "parameters": [],
+          "docs": "Trigger recompute theme style.",
+          "docsTags": []
+        },
+        {
+          "name": "setNewTheme",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setNewTheme(themeName: string) => Promise<void>",
+          "parameters": [],
+          "docs": "Setzt den neuen Theme und wechselt entsprechend das Child Element aus.",
+          "docsTags": [
+            {
+              "name": "param",
+              "text": "themeName Name des Themes"
+            }
+          ]
+        },
+        {
+          "name": "subscribeThemeChangeListener",
+          "returns": {
+            "type": "Promise<Subscription>",
+            "docs": ""
+          },
+          "signature": "subscribeThemeChangeListener(observer: Observer<string>) => Promise<Subscription>",
+          "parameters": [],
+          "docs": "Get the current theme as string in lowercase of tag name.",
+          "docsTags": []
+        }
+      ],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/honey-select-style/honey-select-style.tsx",
+      "encapsulation": "shadow",
+      "tag": "honey-select-style",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "themeName",
+          "type": "any",
+          "mutable": false,
+          "attr": "theme",
+          "reflectToAttr": false,
+          "docs": "Name des zu setzenden Theme z.B. honey-papercss-style",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "honey-apply-style"
+      ],
+      "dependencyGraph": {
+        "honey-select-style": [
+          "honey-apply-style"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/honey-styled-component/honey-styled-component.tsx",
+      "encapsulation": "shadow",
+      "tag": "honey-styled-component",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "slotNames",
+          "type": "string",
+          "mutable": false,
+          "attr": "slot-names",
+          "reflectToAttr": false,
+          "docs": "Komma separierte Liste von Namen der zu erzeugenden Slots",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "themepostfix",
+          "type": "string",
+          "mutable": false,
+          "attr": "themepostfix",
+          "reflectToAttr": false,
+          "docs": "themepostfix of theme name e.g. style when honey-papercss-style",
+          "docsTags": [],
+          "default": "\" \"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "themeprefix",
+          "type": "string",
+          "mutable": false,
+          "attr": "themeprefix",
+          "reflectToAttr": false,
+          "docs": "themeprefix of theme name e.g. honey when honey-papercss-style",
+          "docsTags": [],
+          "default": "\"honey\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ]
+}

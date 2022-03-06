@@ -34,7 +34,7 @@
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e --passWithNoTests",
+    "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "prepare-deliver": "npm run build",
@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "object-hash": "2.2.0",
-    "rxjs": "7.5.2"
+    "rxjs": "7.5.4"
   },
   "devDependencies": {
     "@stencil/core": "2.14.0",

@@ -1,7 +1,6 @@
-import {Component, h, Prop, State} from '@stencil/core';
-import {Subscription} from "rxjs";
-import {Components} from "../../components";
-import HoneyDefineStyle = Components.HoneyDefineStyle;
+import {Component, h, JSX, Prop, State} from '@stencil/core';
+import {HoneyDefineStyle, ThemeListener} from "../honey-define-style/honey-define-style";
+import {EMPTY, Subscription} from "rxjs";
 import {logService} from "../../shared/log-service";
 
 @Component({
@@ -9,8 +8,6 @@ import {logService} from "../../shared/log-service";
   shadow: true
 })
 export class HoneyStyledComponent {
-
-  themeSubscription: Subscription;
 
   /**
    * themeprefix of theme name e.g. honey when honey-papercss-style
@@ -23,56 +20,82 @@ export class HoneyStyledComponent {
   @Prop() themepostfix: string = " ";
 
   /**
+   * Komma separierte Liste von Namen der zu erzeugenden Slots
+   */
+  @Prop() slotNames: string;
+
+
+  styleNameSubscription: Subscription;
+
+
+  /**
    * tagName of honey style sheet to apply e.g. 'honey-papercss-style'
    */
-  @State() theme: string;
+  @State() styleName: string;
 
-  async connectedCallback() {
-    try {
-      await customElements.whenDefined('honey-define-style');
-      const styleElements: HoneyDefineStyle = document.querySelector('honey-define-style') as unknown as HoneyDefineStyle;
-      const listener: ThemeListener = {
-        next: (styleName: string) => this.theme = styleName,
-        error: (error) => logService.errorMessage(error),
-        complete: () => logService.debugMessage("subcription completed")
-      };
-      this.themeSubscription = await styleElements.subscribeThemeChangeListener(listener);
-    } catch (error) {
-      this.theme = 'honey-default-style';
-    }
+  connectedCallback() {
+    this.styleNameSubscription = EMPTY.subscribe(this.createStyleNameChangeListener());
   }
 
   disconnectedCallback() {
-    this.themeSubscription.unsubscribe();
+    this.styleNameSubscription.unsubscribe();
   }
 
-  getTheme(): string {
-    if (!this.theme) return "honey-default-style";
 
-    const nameParts: string[] = this.theme.split("-");
+  async componentWillLoad() {
+    try {
+      await customElements.whenDefined('honey-define-style');
+      const styleElements: HoneyDefineStyle = document.querySelector('honey-define-style') as unknown as HoneyDefineStyle;
+
+      this.styleNameSubscription.unsubscribe();
+      this.styleNameSubscription = await styleElements.subscribeThemeChangeListener(this.createStyleNameChangeListener());
+
+    } catch (error) {
+      this.styleName = 'honey-default-style';
+    }
+  }
+
+  createStyleNameChangeListener() {
+    const listener: ThemeListener = {
+      next: (styleName: string) => this.styleName = styleName,
+      error: (error) => logService.errorMessage(error),
+      complete: () => logService.debugMessage("subcription <honey-styled-component> completed")
+    };
+    return listener;
+  }
+
+
+  getTheme(): string {
+    if (!this.styleName) return "honey-default-style";
+
+    const nameParts: string[] = this.styleName.split("-");
     let themeName = "";
-    themeName += this.themeprefix + (this.themeprefix.trim().length>0? "-":"");
+    themeName += this.themeprefix + (this.themeprefix.trim().length > 0 ? "-" : "");
     themeName += nameParts.slice(1, -1).join("-");
-    themeName += (this.themepostfix.trim().length>0? "-":"")+ this.themepostfix;
+    themeName += (this.themepostfix.trim().length > 0 ? "-" : "") + this.themepostfix;
     return themeName.trim();
   }
 
+  getSlotlist(): JSX.Element[] {
+    if (!this.slotNames || this.slotNames.trim().length < 1) {
+      return ([<slot/>]);
+    } else {
+      let tags: JSX.Element[] = [];
+      this.slotNames.split(",").map((slotName) =>
+        tags.push(<slot name={slotName} slot={slotName}>placeholder {slotName}</slot>)
+      );
+      return tags;
+    }
+  }
+
   render() {
+    const TagName: string = this.getTheme();
+    const slotElements: JSX.Element[] = this.getSlotlist();
     // Grossbuchstabe für Variable notwendig für JSX
-    const TagName = this.getTheme();
     return (
       <TagName>
-        <slot name="slot1" slot="slot1">placeholder slot 1</slot>
-        <slot name="slot2" slot="slot2">placeholder slot 2</slot>
-        <slot name="slot3" slot="slot3">placeholder slot 3</slot>
-        <slot name="slot4" slot="slot4">placeholder slot 4</slot>
-        <slot name="slot5" slot="slot5">placeholder slot 5</slot>
-        <slot name="slot6" slot="slot6">placeholder slot 6</slot>
-        <slot name="slot7" slot="slot7">placeholder slot 7</slot>
-        <slot name="slot8" slot="slot8">placeholder slot 8</slot>
-        <slot name="slot9" slot="slot9">placeholder slot 9</slot>
-        <slot name="slot10" slot="slot10">placeholder slot 10</slot>
+        {slotElements}
       </TagName>
-      )
+    )
   }
 }

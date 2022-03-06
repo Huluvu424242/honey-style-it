@@ -5,15 +5,24 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Observer, Subscription } from "rxjs";
+import { Observable, Observer, Subscription } from "rxjs";
 export namespace Components {
     interface HoneyApplyStyle {
     }
     interface HoneyDefineStyle {
         /**
+          * Referenz auf das Replay Subject als Observable
+         */
+        "getStyleName$": () => Promise<Observable<string>>;
+        /**
           * Trigger recompute theme style.
          */
         "recomputeTheme": () => Promise<void>;
+        /**
+          * Setzt den neuen Theme und wechselt entsprechend das Child Element aus.
+          * @param themeName Name des Themes
+         */
+        "setNewTheme": (themeName: string) => Promise<void>;
         /**
           * Get the current theme as string in lowercase of tag name.
          */
@@ -26,6 +35,10 @@ export namespace Components {
         "themeName": any;
     }
     interface HoneyStyledComponent {
+        /**
+          * Komma separierte Liste von Namen der zu erzeugenden Slots
+         */
+        "slotNames": string;
         /**
           * themepostfix of theme name e.g. style when honey-papercss-style
          */
@@ -80,6 +93,10 @@ declare namespace LocalJSX {
         "themeName"?: any;
     }
     interface HoneyStyledComponent {
+        /**
+          * Komma separierte Liste von Namen der zu erzeugenden Slots
+         */
+        "slotNames"?: string;
         /**
           * themepostfix of theme name e.g. style when honey-papercss-style
          */

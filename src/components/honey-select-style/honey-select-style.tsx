@@ -1,5 +1,5 @@
 import {Component, Element, h, Host, Prop} from '@stencil/core';
-import {printWarning} from "../../shared/helper";
+import {logService} from "../../shared/log-service";
 
 @Component({
   tag: 'honey-select-style',
@@ -21,7 +21,7 @@ export class HoneySelectStyle {
       elem.replaceChild(replacement, elem.children[0]);
       elem.recomputeTheme();
     } else {
-      printWarning("No theme attribute defined for button");
+      logService.warnMessage("No theme attribute defined for button");
     }
   };
 

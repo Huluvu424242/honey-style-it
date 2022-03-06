@@ -1,6 +1,6 @@
 import {Component, Element, h, Host, Method} from '@stencil/core';
 import {Observer, ReplaySubject, Subject, Subscription} from "rxjs";
-import {printWarning} from "../../shared/helper";
+import {logService} from "../../shared/log-service";
 
 @Component({
   tag: 'honey-define-style',
@@ -23,7 +23,7 @@ export class HoneyDefineStyle {
     try {
       this.computeTheme();
     } catch (error) {
-      printWarning(error);
+      logService.warnMessage(error);
     }
   }
 
@@ -32,7 +32,7 @@ export class HoneyDefineStyle {
    */
   @Method()
   async subscribeThemeChangeListener(observer: Observer<string>): Promise<Subscription> {
-    return await this.theme.subscribe(observer);
+    return this.theme.subscribe(observer);
   }
 
   /**

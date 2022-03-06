@@ -18,7 +18,7 @@ npm install --save @huluvu424242/honey-style-it
 ```html
 <script 
     type="module" 
-    src='https://unpkg.com/@huluvu424242/honey-style-it@0.0.5/dist/honey-style-it/honey-style-it.esm.js'>
+    src='https://unpkg.com/@huluvu424242/honey-style-it@0.0.6/dist/honey-style-it/honey-style-it.esm.js'>
 </script>
 ```
 To the [demo site](https://huluvu424242.github.io/honey-style-it/index.html)
@@ -41,8 +41,8 @@ To the [demo site](https://huluvu424242.github.io/honey-style-it/index.html)
 <head>
   <!-- news app -->
   <script type="module"
-          src="https://unpkg.com/@huluvu424242/honey-news@0.0.5/dist/honey-news/honey-news.esm.js"></script>
-  <script nomodule src="https://unpkg.com/@huluvu424242/honey-news@0.0.5/dist/cjs/honey-news.cjs.js"></script>
+          src="https://unpkg.com/@huluvu424242/honey-news@0.0.6/dist/honey-news/honey-news.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@huluvu424242/honey-news@0.0.6/dist/cjs/honey-news.cjs.js"></script>
   <!-- style -->
   <script type="module"
           src="https://unpkg.com/@huluvu424242/honey-papercss-style@0.0.1/dist/honey-papercss-style/honey-papercss-style.esm.js"></script>
@@ -84,6 +84,10 @@ To the [live demo](https://huluvu424242.github.io/honey-style-it/index.html)
 ## releaselog
 
 ### vX.X.X unpublished
+
+### v0.0.6 published at 2022-03-06
+
+* major changes only for pre tests of developers
 
 ### v0.0.5 published at 2021-09-21
 

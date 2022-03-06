@@ -32,28 +32,28 @@ export class LogService {
 
   protected log(level: LogLevel, message: string, ...params) {
     if (console && this.isLoggingActive) {
-      console[level.valueOf()](message, params);
+      console[level.valueOf()](message, ...params);
     }
   }
 
   public logMessage(message: string, ...params) {
-    this.log(LogLevel.LOG, message, params);
+    this.log(LogLevel.LOG, message, ...params);
   }
 
   public errorMessage(message: string, ...params) {
-    this.log(LogLevel.ERROR, message, params);
+    this.log(LogLevel.ERROR, message, ...params);
   }
 
   public warnMessage(message: string, ...params) {
-    this.log(LogLevel.WARNING, message, params);
+    this.log(LogLevel.WARNING, message, ...params);
   }
 
   public debugMessage(message: string, ...params) {
-    this.log(LogLevel.DEBUG, message, params);
+    this.log(LogLevel.DEBUG, message, ...params);
   }
 
   public infoMessage(message: string, ...params) {
-    this.log(LogLevel.INFO, message, params);
+    this.log(LogLevel.INFO, message, ...params);
   }
 
 

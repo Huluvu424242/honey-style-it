@@ -25,6 +25,16 @@ export namespace Components {
          */
         "themeName": any;
     }
+    interface HoneyStyledComponent {
+        /**
+          * themepostfix of theme name e.g. style when honey-papercss-style
+         */
+        "themepostfix": string;
+        /**
+          * themeprefix of theme name e.g. honey when honey-papercss-style
+         */
+        "themeprefix": string;
+    }
 }
 declare global {
     interface HTMLHoneyApplyStyleElement extends Components.HoneyApplyStyle, HTMLStencilElement {
@@ -45,10 +55,17 @@ declare global {
         prototype: HTMLHoneySelectStyleElement;
         new (): HTMLHoneySelectStyleElement;
     };
+    interface HTMLHoneyStyledComponentElement extends Components.HoneyStyledComponent, HTMLStencilElement {
+    }
+    var HTMLHoneyStyledComponentElement: {
+        prototype: HTMLHoneyStyledComponentElement;
+        new (): HTMLHoneyStyledComponentElement;
+    };
     interface HTMLElementTagNameMap {
         "honey-apply-style": HTMLHoneyApplyStyleElement;
         "honey-define-style": HTMLHoneyDefineStyleElement;
         "honey-select-style": HTMLHoneySelectStyleElement;
+        "honey-styled-component": HTMLHoneyStyledComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -62,10 +79,21 @@ declare namespace LocalJSX {
          */
         "themeName"?: any;
     }
+    interface HoneyStyledComponent {
+        /**
+          * themepostfix of theme name e.g. style when honey-papercss-style
+         */
+        "themepostfix"?: string;
+        /**
+          * themeprefix of theme name e.g. honey when honey-papercss-style
+         */
+        "themeprefix"?: string;
+    }
     interface IntrinsicElements {
         "honey-apply-style": HoneyApplyStyle;
         "honey-define-style": HoneyDefineStyle;
         "honey-select-style": HoneySelectStyle;
+        "honey-styled-component": HoneyStyledComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -75,6 +103,7 @@ declare module "@stencil/core" {
             "honey-apply-style": LocalJSX.HoneyApplyStyle & JSXBase.HTMLAttributes<HTMLHoneyApplyStyleElement>;
             "honey-define-style": LocalJSX.HoneyDefineStyle & JSXBase.HTMLAttributes<HTMLHoneyDefineStyleElement>;
             "honey-select-style": LocalJSX.HoneySelectStyle & JSXBase.HTMLAttributes<HTMLHoneySelectStyleElement>;
+            "honey-styled-component": LocalJSX.HoneyStyledComponent & JSXBase.HTMLAttributes<HTMLHoneyStyledComponentElement>;
         }
     }
 }

@@ -1,6 +1,6 @@
 import {Component, Element, h, Host, Method} from '@stencil/core';
 import {Observable, Observer, ReplaySubject, Subject, Subscription} from "rxjs";
-import {logService} from "../../shared/log-service";
+import {logService} from "../../../shared/log-service";
 
 export interface ThemeListener {
   next: (theme: string) => void;

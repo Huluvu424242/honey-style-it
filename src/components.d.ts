@@ -48,6 +48,20 @@ export namespace Components {
          */
         "themeprefix": string;
     }
+    interface HoneyStyledParacomponent {
+        /**
+          * Parameter für das zu erzeugende Tag
+         */
+        "parameterlist": any;
+        /**
+          * themepostfix of theme name e.g. style when honey-papercss-style
+         */
+        "themepostfix": string;
+        /**
+          * themeprefix of theme name e.g. honey when honey-papercss-style
+         */
+        "themeprefix": string;
+    }
 }
 declare global {
     interface HTMLHoneyApplyStyleElement extends Components.HoneyApplyStyle, HTMLStencilElement {
@@ -74,11 +88,18 @@ declare global {
         prototype: HTMLHoneyStyledComponentElement;
         new (): HTMLHoneyStyledComponentElement;
     };
+    interface HTMLHoneyStyledParacomponentElement extends Components.HoneyStyledParacomponent, HTMLStencilElement {
+    }
+    var HTMLHoneyStyledParacomponentElement: {
+        prototype: HTMLHoneyStyledParacomponentElement;
+        new (): HTMLHoneyStyledParacomponentElement;
+    };
     interface HTMLElementTagNameMap {
         "honey-apply-style": HTMLHoneyApplyStyleElement;
         "honey-define-style": HTMLHoneyDefineStyleElement;
         "honey-select-style": HTMLHoneySelectStyleElement;
         "honey-styled-component": HTMLHoneyStyledComponentElement;
+        "honey-styled-paracomponent": HTMLHoneyStyledParacomponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -106,11 +127,26 @@ declare namespace LocalJSX {
          */
         "themeprefix"?: string;
     }
+    interface HoneyStyledParacomponent {
+        /**
+          * Parameter für das zu erzeugende Tag
+         */
+        "parameterlist"?: any;
+        /**
+          * themepostfix of theme name e.g. style when honey-papercss-style
+         */
+        "themepostfix"?: string;
+        /**
+          * themeprefix of theme name e.g. honey when honey-papercss-style
+         */
+        "themeprefix"?: string;
+    }
     interface IntrinsicElements {
         "honey-apply-style": HoneyApplyStyle;
         "honey-define-style": HoneyDefineStyle;
         "honey-select-style": HoneySelectStyle;
         "honey-styled-component": HoneyStyledComponent;
+        "honey-styled-paracomponent": HoneyStyledParacomponent;
     }
 }
 export { LocalJSX as JSX };
@@ -121,6 +157,7 @@ declare module "@stencil/core" {
             "honey-define-style": LocalJSX.HoneyDefineStyle & JSXBase.HTMLAttributes<HTMLHoneyDefineStyleElement>;
             "honey-select-style": LocalJSX.HoneySelectStyle & JSXBase.HTMLAttributes<HTMLHoneySelectStyleElement>;
             "honey-styled-component": LocalJSX.HoneyStyledComponent & JSXBase.HTMLAttributes<HTMLHoneyStyledComponentElement>;
+            "honey-styled-paracomponent": LocalJSX.HoneyStyledParacomponent & JSXBase.HTMLAttributes<HTMLHoneyStyledParacomponentElement>;
         }
     }
 }

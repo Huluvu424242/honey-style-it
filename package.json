@@ -1,6 +1,6 @@
 {
   "name": "@huluvu424242/honey-style-it",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "News reader web component for custom urls.",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -46,20 +46,20 @@
     "node": "16.13.2"
   },
   "dependencies": {
-    "object-hash": "2.2.0",
-    "rxjs": "7.5.4"
+    "object-hash": "3.0.0",
+    "rxjs": "7.5.5"
   },
   "devDependencies": {
-    "@stencil/core": "2.14.0",
+    "@stencil/core": "2.15.0",
     "@stencil/store": "1.5.0",
-    "@types/jest": "27.4.0",
-    "@types/puppeteer": "5.4.4",
-    "jest": "27.4.7",
-    "jest-cli": "27.4.7",
+    "@types/jest": "27.4.1",
+    "@types/puppeteer": "5.4.5",
+    "jest": "27.5.1",
+    "jest-cli": "27.5.1",
     "license-checker": "25.0.1",
-    "puppeteer": "13.4.1",
+    "puppeteer": "13.5.2",
     "rollup-plugin-node-polyfills": "0.2.1",
-    "ts-node": "10.4.0",
-    "typescript": "4.6.2"
+    "ts-node": "10.7.0",
+    "typescript": "4.6.3"
   }
 }

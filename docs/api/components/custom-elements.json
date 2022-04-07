@@ -1,13 +1,13 @@
 {
-  "timestamp": "2022-03-06T19:36:05",
+  "timestamp": "2022-04-07T19:18:22",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.14.0",
+    "version": "2.15.0",
     "typescriptVersion": "4.5.4"
   },
   "components": [
     {
-      "filePath": "./src/components/honey-apply-style/honey-apply-style.tsx",
+      "filePath": "./src/components/core/honey-apply-style/honey-apply-style.tsx",
       "encapsulation": "none",
       "tag": "honey-apply-style",
       "docs": "",
@@ -31,7 +31,7 @@
       }
     },
     {
-      "filePath": "./src/components/honey-define-style/honey-define-style.tsx",
+      "filePath": "./src/components/core/honey-define-style/honey-define-style.tsx",
       "encapsulation": "none",
       "tag": "honey-define-style",
       "docs": "",
@@ -99,7 +99,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/honey-select-style/honey-select-style.tsx",
+      "filePath": "./src/components/core/honey-select-style/honey-select-style.tsx",
       "encapsulation": "shadow",
       "tag": "honey-select-style",
       "docs": "",
@@ -140,7 +140,7 @@
       }
     },
     {
-      "filePath": "./src/components/honey-styled-component/honey-styled-component.tsx",
+      "filePath": "./src/components/core/honey-styled-component/honey-styled-component.tsx",
       "encapsulation": "shadow",
       "tag": "honey-styled-component",
       "docs": "",
@@ -158,6 +158,75 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "themepostfix",
+          "type": "string",
+          "mutable": false,
+          "attr": "themepostfix",
+          "reflectToAttr": false,
+          "docs": "themepostfix of theme name e.g. style when honey-papercss-style",
+          "docsTags": [],
+          "default": "\" \"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "themeprefix",
+          "type": "string",
+          "mutable": false,
+          "attr": "themeprefix",
+          "reflectToAttr": false,
+          "docs": "themeprefix of theme name e.g. honey when honey-papercss-style",
+          "docsTags": [],
+          "default": "\"honey\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/core/honey-styled-component/honey-styled-paracomponent.tsx",
+      "encapsulation": "shadow",
+      "tag": "honey-styled-paracomponent",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "parameterlist",
+          "type": "any",
+          "mutable": false,
+          "attr": "parameterlist",
+          "reflectToAttr": false,
+          "docs": "Parameter für das zu erzeugende Tag",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "any"
             }
           ],
           "optional": false,
